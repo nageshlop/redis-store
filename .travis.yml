@@ -1,5 +1,8 @@
 language: ruby
 sudo: false
+arch:
+  - amd64
+  - ppc64le
 cache: bundler
 notifications:
   webhooks: https://www.travisbuddy.com
@@ -29,6 +32,11 @@ matrix:
   allow_failures:
   - rvm: jruby-head
   - rvm: ruby-head
+  - rvm: jruby-head
+    arch: ppc64le
+  - rvm: ruby-head
+    arch: ppc64le
+
 deploy:
   provider: rubygems
   api_key:
